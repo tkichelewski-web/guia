@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Como usar — Portal Índice de Prevenção SSMA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--verde:#07583C;--verde-2:#0A6B4A;--lima:#B3DD64;--lima-suave:#EAF5D6;--ambar:#FDB952;--vermelho:#DF4636;
+  --fundo:#F2F5F0;--papel:#FFFFFF;--tinta:#1C2B22;--muted:#5D6F64;--linha:#D5E3CC;--cinza-bg:#EEF1EE}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:16px}
+html,body{margin:0}
+body{font-family:'Barlow',system-ui,-apple-system,'Segoe UI',Arial,sans-serif;background:var(--fundo);color:var(--tinta);font-size:16px;line-height:1.6}
+:focus-visible{outline:3px solid var(--lima);outline-offset:2px}
+header.topo{background:var(--verde);color:#fff;border-bottom:4px solid var(--lima)}
+.topo-inner{max-width:1180px;margin:0 auto;padding:22px 24px 18px;display:flex;gap:20px;align-items:flex-end;flex-wrap:wrap}
+.topo h1{margin:0;font-family:'Barlow Condensed',sans-serif;font-size:32px;line-height:1.05}
+.topo .sub{color:var(--lima);font-size:15px;font-weight:500;margin-top:4px}
+.topo .acoes{margin-left:auto;display:flex;gap:10px;flex-wrap:wrap}
+.topo a.btn{color:#fff;text-decoration:none;border:1px solid #2F7F60;border-radius:6px;padding:7px 14px;font-weight:600;font-size:14px}
+.topo a.btn:hover{background:var(--verde-2)}
+.topo button.btn{background:none;color:#fff;border:1px solid #2F7F60;border-radius:6px;padding:7px 14px;font:inherit;font-weight:600;font-size:14px;cursor:pointer}
+.layout{max-width:1180px;margin:0 auto;padding:24px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:28px;align-items:start}
+nav.sumario{position:sticky;top:16px;background:var(--papel);border:1px solid var(--linha);border-radius:8px;padding:14px 16px;max-height:calc(100vh - 32px);overflow:auto}
+nav.sumario h2{margin:0 0 8px;font-size:13px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+nav.sumario ul{list-style:none;margin:0;padding:0}
+nav.sumario li a{display:block;padding:4px 6px;border-radius:4px;color:var(--tinta);text-decoration:none;font-size:14px;line-height:1.35}
+nav.sumario li.n2 a{font-weight:600;margin-top:6px}
+nav.sumario li.n3 a{padding-left:16px;color:var(--muted)}
+nav.sumario li a:hover,nav.sumario li a.ativo{background:var(--lima-suave);color:var(--verde)}
+article{background:var(--papel);border:1px solid var(--linha);border-radius:8px;padding:8px 34px 34px;max-width:880px}
+article h2{font-family:'Barlow Condensed',sans-serif;font-size:28px;color:var(--verde);margin:34px 0 10px;padding-top:12px;border-top:1px solid var(--cinza-bg)}
+article h2:first-child{border-top:none;margin-top:18px}
+article h3{font-size:19px;color:var(--verde);margin:26px 0 6px}
+article p,article li{max-width:72ch}
+article a{color:var(--verde);font-weight:600}
+article ol,article ul{padding-left:22px}
+article li{margin:3px 0}
+article code{background:var(--cinza-bg);border-radius:4px;padding:1px 6px;font-size:14px}
+article pre{background:var(--fundo);border:1px solid var(--linha);border-radius:6px;padding:12px 14px;overflow-x:auto;font-size:13.5px;line-height:1.45}
+article pre code{background:none;padding:0}
+.tabela{overflow-x:auto;margin:12px 0 16px;border:1px solid var(--linha);border-radius:6px}
+.tabela table{border-collapse:collapse;width:100%;font-size:14px}
+.tabela th,.tabela td{padding:8px 10px;border-bottom:1px solid var(--cinza-bg);text-align:left;vertical-align:top}
+.tabela thead th{background:var(--lima-suave);color:var(--verde);font-weight:700}
+.tabela tr:last-child td{border-bottom:none}
+.atualizado{font-size:13px;color:var(--muted);margin:14px 0 0}
+.topo-link{display:inline-block;margin-top:24px;font-size:14px}
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr;padding:16px}
+  nav.sumario{position:static;max-height:none}
+  article{padding:4px 18px 24px}
+}
+@media print{
+  header.topo .acoes,nav.sumario,.topo-link{display:none}
+  .layout{display:block;padding:0} article{border:none;padding:0;max-width:none}
+  body{background:#fff}
+}
+</style>
+</head>
+<body>
+<header class="topo">
+  <div class="topo-inner">
+    <div>
+      <h1>Como usar o Portal</h1>
+      <div class="sub">Guia de uso — Portal Índice de Prevenção SSMA</div>
+    </div>
+    <div class="acoes">
+      <button class="btn" type="button" onclick="window.print()">Imprimir / PDF</button>
+      <a class="btn" href="./">Voltar ao portal</a>
+    </div>
+  </div>
+</header>
+<div class="layout">
+  <nav class="sumario" aria-label="Sumário"><h2>Nesta página</h2><ul><li class="n2"><a href="#visao-geral">Visão geral</a></li><li class="n2"><a href="#login">Primeiro acesso e login</a></li><li class="n2"><a href="#portal">Usando o portal</a></li><li class="n2"><a href="#telas">Telas dos técnicos</a></li><li class="n3"><a href="#simulados">Cronograma de Simulados</a></li><li class="n3"><a href="#coaching">Cronograma de Coaching</a></li><li class="n3"><a href="#comites">Comitês de SSMA</a></li><li class="n3"><a href="#equipamentos">Equipamentos de Emergência</a></li><li class="n3"><a href="#acidentes">Investigação de Acidentes</a></li><li class="n3"><a href="#meio-ambiente">Indicadores de Meio Ambiente</a></li><li class="n2"><a href="#hub">Hub: importar relatórios e apurar</a></li><li class="n3"><a href="#importar">Relatórios que se importam</a></li><li class="n3"><a href="#apurar">Apurações das telas</a></li><li class="n3"><a href="#previa">Conferir a prévia antes de gravar</a></li><li class="n3"><a href="#erros">Quando aparece erro</a></li><li class="n3"><a href="#apresentacao">Apresentação mensal</a></li><li class="n2"><a href="#evidencias">Evidências no SharePoint</a></li><li class="n2"><a href="#rotina">Rotina do mês e contato</a></li></ul></nav>
+  <article>
+    <p class="atualizado">Atualizado em 08/10/2026</p>
+<h2 id="visao-geral">Visão geral</h2>
+<p>Tudo começa pelo <strong>Portal Índice de Prevenção SSMA</strong>: você entra uma vez, com um código enviado ao seu e-mail, e abre as outras telas já conectado. Cada tela registra uma parte dos indicadores do IP, e o Hub leva esses números para a nota das gerências.</p>
+<p>Endereço do portal: <a href="https://tkichelewski-web.github.io/portal-ip/" target="_blank" rel="noopener">tkichelewski-web.github.io/portal-ip</a>. Salve nos favoritos do navegador.</p>
+<div class="tabela"><table>
+<thead>
+<tr>
+<th>Tela</th>
+<th>Para que serve</th>
+<th>Quem usa</th>
+<th>Endereço</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Portal Índice de Prevenção SSMA</td>
+<td>Entrada, login e pendências do mês</td>
+<td>Todos</td>
+<td><a href="https://tkichelewski-web.github.io/portal-ip/" target="_blank" rel="noopener">portal-ip</a></td>
+</tr>
+<tr>
+<td>Cronograma de Simulados</td>
+<td>Datas e baixa dos simulados</td>
+<td>Técnicos de Segurança</td>
+<td><a href="https://tkichelewski-web.github.io/Cronograma-simulados/" target="_blank" rel="noopener">Cronograma-simulados</a></td>
+</tr>
+<tr>
+<td>Cronograma de Coaching</td>
+<td>Agenda e validação dos coachings de liderança</td>
+<td>Técnicos de Segurança</td>
+<td><a href="https://tkichelewski-web.github.io/Cronograma-coaching/" target="_blank" rel="noopener">Cronograma-coaching</a></td>
+</tr>
+<tr>
+<td>Comitês de SSMA</td>
+<td>Calendário e baixa das reuniões de comitê</td>
+<td>Técnicos / SSMA</td>
+<td><a href="https://tkichelewski-web.github.io/Comites-SSMA/" target="_blank" rel="noopener">Comites-SSMA</a></td>
+</tr>
+<tr>
+<td>Equipamentos de Emergência</td>
+<td>Cadastro por local e avaliação periódica</td>
+<td>Técnicos de Segurança</td>
+<td><a href="https://tkichelewski-web.github.io/equipamentos-emergencia/" target="_blank" rel="noopener">equipamentos-emergencia</a></td>
+</tr>
+<tr>
+<td>Investigação de Acidentes</td>
+<td>Comitê e prazo das investigações</td>
+<td>Técnicos / SSMA</td>
+<td><a href="https://tkichelewski-web.github.io/investigacao-acidentes/" target="_blank" rel="noopener">investigacao-acidentes</a></td>
+</tr>
+<tr>
+<td>Indicadores de Meio Ambiente</td>
+<td>Avaliações amostrais de Meio Ambiente</td>
+<td>Time de Meio Ambiente</td>
+<td><a href="https://tkichelewski-web.github.io/indicadores-meio-ambiente/" target="_blank" rel="noopener">indicadores-meio-ambiente</a></td>
+</tr>
+<tr>
+<td>Hub de Integração e Relatórios</td>
+<td>Importar relatórios, apurar as telas e gerar a apresentação</td>
+<td>Gestão do IP</td>
+<td><a href="https://tkichelewski-web.github.io/Hub-de-Integracao-e-Relatorios/" target="_blank" rel="noopener">Hub</a></td>
+</tr>
+<tr>
+<td>Tratamento de Multas</td>
+<td>Gera a base de multas para importar no Hub</td>
+<td>Gestão do IP</td>
+<td><a href="https://tkichelewski-web.github.io/tratamento-multas-ip/" target="_blank" rel="noopener">tratamento-multas-ip</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>O Sistema IP e a tela de Requisitos Legais são de uso restrito do administrador e não aparecem no portal.</p>
+<h2 id="login">Primeiro acesso e login</h2>
+<p>Não existe senha: a cada entrada num computador novo, você recebe um código no e-mail corporativo. Para isso, seu e-mail precisa estar cadastrado; peça ao administrador do IP antes do primeiro acesso.</p>
+<ol>
+<li>Abra o portal e digite seu <strong>e-mail corporativo</strong> (ex.: nome@usinasantaadelia.com.br).</li>
+<li>Clique em <strong>Receber código por e-mail</strong>.</li>
+<li>Abra o e-mail de <strong>Portal Índice de Prevenção SSMA</strong> (portal.ip.ssma@gmail.com). O código aparece no assunto e no corpo.</li>
+<li>Digite o código na tela e clique em <strong>Entrar</strong>. Ele vale por 1 hora e só uma vez.</li>
+<li>Pronto: o portal mostra "Olá, [seu nome]" e todas as telas abrem já conectadas.</li>
+</ol>
+<p><strong>Quanto tempo fico conectado?</strong> Enquanto usar o mesmo navegador no mesmo computador, sem clicar em Sair. Você só precisará de um código novo se:</p>
+<ul>
+<li>clicar em <strong>Sair</strong>;</li>
+<li>usar outro computador, outro navegador ou o celular;</li>
+<li>limpar os dados do navegador ou usar janela anônima.</li>
+</ul>
+<p>Se abrir uma tela pelo endereço direto sem estar conectado, ela leva você ao portal para entrar e depois volta sozinha para a tela.</p>
+<div class="tabela"><table>
+<thead>
+<tr>
+<th>Problema</th>
+<th>O que fazer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>O código não chegou</td>
+<td>Confira o <strong>lixo eletrônico</strong>. Se estiver lá, marque como "Não é lixo eletrônico". Depois clique em <strong>Reenviar código</strong>.</td>
+</tr>
+<tr>
+<td>"Este e-mail não está cadastrado"</td>
+<td>Seu e-mail ainda não tem acesso. Peça o cadastro ao administrador do IP.</td>
+</tr>
+<tr>
+<td>"Código inválido ou vencido"</td>
+<td>Confira os números ou clique em <strong>Reenviar código</strong>. Vale sempre o último código recebido.</td>
+</tr>
+<tr>
+<td>"Muitos pedidos seguidos"</td>
+<td>Aguarde um minuto e peça de novo.</td>
+</tr>
+<tr>
+<td>Computador compartilhado</td>
+<td>Clique em <strong>Sair</strong> ao terminar.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="portal">Usando o portal</h2>
+<p>O portal mostra, em cada bloco, o que está pendente no mês atual; comece o dia por ele. Os números são lidos na hora em que a página abre; recarregue (F5) para atualizar.</p>
+<p>Os blocos estão separados por quem usa: Técnicos de Segurança, Acidentes, Emergência, Comitês de SSMA, Meio Ambiente e Gestão do IP. Clique em <strong>Abrir</strong> para entrar na tela.</p>
+<p>Como ler as pendências:</p>
+<ul>
+<li><strong>Verde</strong>: tudo feito no mês (ex.: 4/4 realizados).</li>
+<li><strong>Amarelo</strong>: falta fazer ou dar baixa, mas ainda dá tempo.</li>
+<li><strong>Vermelho</strong>: atrasado, de mês anterior ou com prazo vencido. Resolva primeiro.</li>
+</ul>
+<p>No topo ficam o mês, a safra, o link <strong>Como usar</strong> (este guia) e o botão <strong>Sair</strong>.</p>
+<h2 id="telas">Telas dos técnicos</h2>
+<p>Toda baixa grava automaticamente seu nome, pelo login; ninguém registra no nome de outra pessoa. A regra geral do IP é a mesma em todas: conta no mês planejado, e só se a baixa tiver data dentro daquele mês.</p>
+<h3 id="simulados">Cronograma de Simulados</h3>
+<ol>
+<li>Escolha a unidade e o mês na régua do topo.</li>
+<li>Para cada cenário, registre a <strong>data agendada</strong> combinada com a área.</li>
+<li>Depois do simulado, clique em <strong>Dar baixa</strong>: data realizada, participantes, tempo de resposta e o <strong>link da evidência</strong> no SharePoint.</li>
+<li>Se não acontecer, use <strong>Cancelar</strong> e informe o motivo. Ele continua no previsto e conta como não realizado.</li>
+</ol>
+<p>Simulado feito depois do fim do mês planejado fica registrado, mas não conta para aquele mês.</p>
+<h3 id="coaching">Cronograma de Coaching</h3>
+<ol>
+<li>Encontre o líder na gerência e clique em <strong>Agendar</strong>: data e <strong>técnico responsável</strong>. A lista mostra só os técnicos da unidade da gerência (JB, PB ou ambos).</li>
+<li>Depois do coaching, envie o <strong>PDF do checklist do técnico</strong> e, em seguida, o <strong>PDF do checklist do líder</strong>.</li>
+<li>A tela confere os dados do PDF e avisa se o técnico do checklist for diferente do agendado.</li>
+<li>Com os dois checklists validados, o coaching fica <strong>Realizado</strong>.</li>
+</ol>
+<p>O prazo é o fim do semestre: 30/09 (abril a setembro) e 31/03 (outubro a março).</p>
+<h3 id="comites">Comitês de SSMA</h3>
+<ol>
+<li>Os meses das reuniões de cada gerência já vêm marcados no calendário (bimestral: 6 por safra; quadrimestral: 3).</li>
+<li>Clique no mês da reunião e informe a <strong>data realizada</strong>, o <strong>link da ata</strong> no SharePoint (obrigatório) e os participantes.</li>
+<li>Se a reunião não acontecer, use <strong>Cancelar reunião</strong> com o motivo.</li>
+</ol>
+<p>Cores: verde = feita no mês; verde-claro = feita depois do mês (não conta); amarelo = falta baixa no mês atual; vermelho = mês passou sem baixa.</p>
+<h3 id="equipamentos">Equipamentos de Emergência</h3>
+<ol>
+<li>Na aba <strong>Cadastro de locais</strong>, cadastre cada <strong>local × tipo de equipamento × quantidade</strong> da sua área e a gerência onde conta. Para semestral e anual, informe o mês da próxima avaliação.</li>
+<li>Na aba <strong>Avaliações do mês</strong>, aparecem os equipamentos que vencem no mês. Clique em cada um e informe: data, quantos avaliados, quantos <strong>operacionais</strong>, quantos <strong>não operacionais com OM aberta</strong> (com o número da OM) e o <strong>link da evidência</strong>.</li>
+<li>Equipamento retirado do local: edite o cadastro e desmarque <strong>Ativo</strong>.</li>
+</ol>
+<p>No IP, conta o equipamento operacional ou com OM aberta. Não avaliado ou com defeito sem OM não conta.</p>
+<div class="tabela"><table>
+<thead>
+<tr>
+<th>Equipamento</th>
+<th>Avaliação</th>
+<th>Frequência</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Alarme de incêndio, chuveiro de emergência, abertura final de linha, bomba, bomba (2 diesel/1 elétrica)</td>
+<td>Teste</td>
+<td>Mensal</td>
+</tr>
+<tr>
+<td>Canhão</td>
+<td>Inspeção</td>
+<td>Mensal</td>
+</tr>
+<tr>
+<td>Caixa abrigo mangueira</td>
+<td>Inspeção</td>
+<td>Semestral</td>
+</tr>
+<tr>
+<td>Mangueira, LGE</td>
+<td>Teste</td>
+<td>Anual</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="acidentes">Investigação de Acidentes</h3>
+<ol>
+<li>A lista de ocorrências vem da planilha de controle de acidentes, importada pela Gestão do IP. Contam no IP só as com <strong>DEFLATOR = SIM</strong>, a partir de outubro/2026.</li>
+<li>Confira a <strong>gerência</strong> de cada ocorrência. Se o colaborador estava emprestado a outra área, troque na lista; a escolha fica gravada.</li>
+<li>Clique em <strong>Registrar investigação</strong>: responsável e cargo, membro da CIPA/CIPATR, participantes, <strong>data de conclusão</strong> e <strong>link do relatório</strong> no SharePoint.</li>
+</ol>
+<div class="tabela"><table>
+<thead>
+<tr>
+<th>Classificação</th>
+<th>Responsável pela análise</th>
+<th>Prazo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fatalidade, ambiental de grande proporção</td>
+<td>Gerente de área</td>
+<td>15 dias</td>
+</tr>
+<tr>
+<td>ACA, ASA, ambiental de média e baixa proporção, incidente de alto potencial</td>
+<td>Supervisor de área</td>
+<td>7 dias</td>
+</tr>
+</tbody>
+</table></div>
+<p>O comitê também precisa ter ao menos um membro da CIPA/CIPATR (NP.AD.00.03.0002, itens 7.2 e 7.3.2). O prazo conta em dias corridos a partir da data da ocorrência.</p>
+<h3 id="meio-ambiente">Indicadores de Meio Ambiente</h3>
+<ol>
+<li>Clique em <strong>Nova vistoria</strong> e escolha a gerência e o indicador. A lista mostra só os indicadores da gerência.</li>
+<li>Informe a data, o ponto avaliado, quantos itens foram avaliados e quantos estavam conformes, e o <strong>link da evidência</strong>.</li>
+<li>O mês da data é o mês em que a vistoria conta no IP.</li>
+</ol>
+<p>Nos indicadores de plano e de entrega (esgoto, sump, limpeza da caixa SAO, PAV, TCRA, embalagens), registre o previsto do mês mesmo quando nada foi feito. Sem registro, o mês conta como 0 de 0 (100 pontos).</p>
+<h2 id="hub">Hub: importar relatórios e apurar</h2>
+<p>O Hub é o único caminho para os números chegarem à nota do IP: ele lê os relatórios exportados e as telas, mostra uma prévia e só grava depois que você confirmar. Abra o Hub depois de entrar pelo portal; algumas apurações precisam do login.</p>
+<p>Há dois tipos de botão:</p>
+<ul>
+<li><strong>Importar planilha</strong>: você escolhe o arquivo exportado de outro sistema.</li>
+<li><strong>Apurar</strong>: o Hub lê sozinho uma tela do portal; não há arquivo.</li>
+</ul>
+<h3 id="importar">Relatórios que se importam</h3>
+<p>Exporte o relatório do mês no formato de costume (CSV ou Excel), sem mudar as colunas, e escolha o arquivo no botão correspondente.</p>
+<div class="tabela"><table>
+<thead>
+<tr>
+<th>Botão no Hub</th>
+<th>Arquivo</th>
+<th>Colunas que o Hub lê</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inspeção (WeCheck)</td>
+<td>Relatório de inspeções do mês</td>
+<td>UNIDADE, GERENCIA, SAFRA, MÊS, FREQUÊNCIA (Semana 1–4, 1ª/2ª quinzena, nome do mês), PREVISTO, REALIZADO</td>
+</tr>
+<tr>
+<td>Observação (WeCheck)</td>
+<td>Relatório de observações comportamentais</td>
+<td>As mesmas da Inspeção (FREQUÊNCIA também aceita "2º Trim")</td>
+</tr>
+<tr>
+<td>Plano de Ação (WeCheck)</td>
+<td>Relatório de planos de ação</td>
+<td>Gerência, unidade, mês do prazo, tipo e status da ação</td>
+</tr>
+<tr>
+<td>Exames Periódicos</td>
+<td>Planilha de exames do mês</td>
+<td>GERENCIA, UNIDADE, Mês, Safra, previsto e realizado</td>
+</tr>
+<tr>
+<td>Matriz de Treinamento</td>
+<td>Planilha da matriz de treinamento</td>
+<td>Gerência, unidade, mês, previsto e realizado</td>
+</tr>
+<tr>
+<td>Multas de Trânsito</td>
+<td>Base_Multas_IP.xlsx, gerada na ferramenta Tratamento de Multas</td>
+<td>Gerência, Unidade, Mês, IP</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Multas, passo a passo:</strong></p>
+<ol>
+<li>Abra <strong>Tratamento de Multas</strong> pelo portal.</li>
+<li>Envie a base de multas e o <strong>ATIVOS</strong>, que precisa ter a coluna <strong>CARGO</strong>.</li>
+<li>Baixe o <strong>Base_Multas_IP.xlsx</strong>. Multas de condutores com cargo de gerente ou supervisor já saem como IP = NÃO.</li>
+<li>No Hub, importe esse arquivo em <strong>Multas de Trânsito</strong> e marque só o mês que fechou.</li>
+</ol>
+<p><strong>Plano de Ação:</strong> quando a área muda o prazo de uma ação, ela sai do relatório daquele mês. Para corrigir um mês, exporte um relatório que <strong>inclua esse mês</strong> e importe de novo. O Hub avisa o que estava gravado e virou 0 de 0.</p>
+<h3 id="apurar">Apurações das telas</h3>
+<p>Cada botão abre uma janela: escolha a safra, clique em <strong>Carregar prévia</strong>, marque os meses e clique em <strong>Confirmar e Gravar</strong>.</p>
+<div class="tabela"><table>
+<thead>
+<tr>
+<th>Botão no Hub</th>
+<th>Lê da tela</th>
+<th>Previsto × realizado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simulados — Cronograma</td>
+<td>Cronograma de Simulados</td>
+<td>Simulados planejados no mês × baixados dentro do mês</td>
+</tr>
+<tr>
+<td>Coaching Liderança — Cronograma</td>
+<td>Cronograma de Coaching</td>
+<td>Fecha em setembro e março; demais meses 0 de 0</td>
+</tr>
+<tr>
+<td>Comitês — Reuniões</td>
+<td>Comitês de SSMA</td>
+<td>Reunião planejada no mês × feita até o fim do mês</td>
+</tr>
+<tr>
+<td>Equipamentos de Emergência</td>
+<td>Equipamentos de Emergência</td>
+<td>Equipamentos vencendo no mês × operacionais ou com OM</td>
+</tr>
+<tr>
+<td>Investigação de Acidentes</td>
+<td>Investigação de Acidentes</td>
+<td>Ocorrências com deflator × comitê conforme; × concluídas no prazo</td>
+</tr>
+<tr>
+<td>Meio Ambiente — Indicadores</td>
+<td>Indicadores de Meio Ambiente</td>
+<td>Itens avaliados × conformes</td>
+</tr>
+<tr>
+<td>Requisito Legal — Ius Natura</td>
+<td>Tela Requisitos Legais (administrador)</td>
+<td>Requisitos aplicáveis × atendidos; total × avaliados</td>
+</tr>
+</tbody>
+</table></div>
+<p>A planilha de acidentes (lista do SharePoint) e o ATIVOS entram pela própria tela <strong>Investigação de Acidentes</strong>, no botão <strong>Importar planilha</strong>, e não pelo Hub.</p>
+<h3 id="previa">Conferir a prévia antes de gravar</h3>
+<ul>
+<li>Cada célula mostra o número novo e, embaixo, em cinza, o que está gravado hoje.</li>
+<li><strong>Avisos em amarelo</strong> listam gerências não encontradas no cadastro ou sem o indicador configurado. Esses números não vão para o IP; leia antes de confirmar.</li>
+<li>Reimportar o mesmo mês <strong>substitui</strong> o que estava gravado. Pode repetir quando o relatório for corrigido.</li>
+</ul>
+<h3 id="erros">Quando aparece erro</h3>
+<ol>
+<li>Aperte <strong>F12</strong> e abra a aba <strong>Console</strong>.</li>
+<li>Clique na setinha das linhas em vermelho (ex.: "Erros na importação: Array") até aparecerem a gerência, o mês e o motivo.</li>
+<li>Tire um print e mande ao administrador do IP.</li>
+</ol>
+<p>Mensagens amarelas de "Tracking Prevention" são do navegador e podem ser ignoradas. Depois de uma atualização do Hub, use <strong>Ctrl + F5</strong> para carregar a versão nova.</p>
+<h3 id="apresentacao">Apresentação mensal</h3>
+<p>No fim do Hub, gere o PowerPoint do mês: um slide por gerência com pontuação, ajustes, nota de auditoria e tabela de indicadores, seguido das pendências da gerência.</p>
+<h2 id="evidencias">Evidências no SharePoint</h2>
+<p>A evidência fica no SharePoint, e a tela guarda só o link. Salve o arquivo na pasta certa, copie o link e cole no campo de evidência da baixa.</p>
+<p>As pastas seguem <strong>Safra → Tema → Unidade → Mês</strong>:</p>
+<pre><code>Evidências IP VIDAS/
+└── Safra 2026-2027/
+    ├── 01 Simulados/
+    ├── 02 Comitês de SSMA/
+    ├── 03 Equipamentos de Emergência/
+    ├── 04 Investigação de Acidentes/
+    └── 05 Meio Ambiente/
+          ├── JB/  01 - Abril 2026 … 12 - Março 2027
+          └── PB/  01 - Abril 2026 … 12 - Março 2027
+</code></pre>
+<p>O mês da pasta é o <strong>mês em que a evidência conta no IP</strong>: o mês planejado do simulado ou da reunião, o vencimento do equipamento, a data do acidente.</p>
+<div class="tabela"><table>
+<thead>
+<tr>
+<th>Tema</th>
+<th>O que guardar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simulados</td>
+<td>Relatório do simulado, lista de presença e fotos</td>
+</tr>
+<tr>
+<td>Comitês de SSMA</td>
+<td>Ata da reunião</td>
+</tr>
+<tr>
+<td>Equipamentos de Emergência</td>
+<td>Checklist do teste ou inspeção, fotos e número da OM</td>
+</tr>
+<tr>
+<td>Investigação de Acidentes</td>
+<td>Relatório de análise assinado pelo comitê (Anexo V) e levantamento de fatos</td>
+</tr>
+<tr>
+<td>Meio Ambiente</td>
+<td>Fotos e registros das avaliações</td>
+</tr>
+</tbody>
+</table></div>
+<p>Os checklists de <strong>Coaching</strong> não vão para o SharePoint: o PDF é enviado direto na tela do cronograma.</p>
+<p><strong>Nome do arquivo:</strong> <code>AAAA-MM-DD_Gerência Unidade_Descrição</code>, por exemplo <code>2026-10-20_Automotiva PB_Ata comitê.pdf</code>. Assim os arquivos ficam em ordem de data.</p>
+<p><strong>Copiar o link:</strong></p>
+<ol>
+<li>No SharePoint, clique nos <strong>três pontinhos</strong> do arquivo. Se forem vários arquivos, use os da pasta.</li>
+<li>Clique em <strong>Copiar link</strong>.</li>
+<li>Em <strong>Configurações do link</strong>, deixe <strong>Pessoas na Usina Santa Adélia</strong>.</li>
+<li>Cole no campo de evidência da tela e salve.</li>
+</ol>
+<h2 id="rotina">Rotina do mês e contato</h2>
+<p>As baixas precisam estar feitas até o <strong>último dia do mês</strong>: depois disso, o que for registrado fica no sistema, mas não conta para aquele mês.</p>
+<p><strong>Durante o mês (técnicos e Meio Ambiente)</strong></p>
+<ol>
+<li>Abra o portal e veja as pendências do mês em cada bloco.</li>
+<li>Dê baixa em simulados, reuniões, avaliações de equipamentos e investigações assim que acontecerem, com o link da evidência.</li>
+<li>Registre as vistorias de Meio Ambiente e os coachings realizados.</li>
+</ol>
+<p><strong>No fechamento (Gestão do IP)</strong></p>
+<ol>
+<li>Exporte e importe no Hub os relatórios do mês: Inspeção, Observação, Plano de Ação, Exames Periódicos, Matriz de Treinamento e Multas.</li>
+<li>Importe a planilha de acidentes na tela Investigação de Acidentes.</li>
+<li>Rode no Hub as apurações das telas: Simulados, Coaching (setembro e março), Comitês, Equipamentos de Emergência, Investigação de Acidentes e Meio Ambiente.</li>
+<li>Confira a prévia de cada uma, grave e gere a apresentação do mês.</li>
+</ol>
+<p><strong>Dúvidas, cadastro de acesso e erros:</strong> fale com o administrador do IP (tkichelewski@usinasantaadelia.com.br). Em caso de erro, mande o print da tela e, se houver, do console (F12).</p>
+    <a class="topo-link" href="#visao-geral">↑ Voltar ao início</a>
+  </article>
+</div>
+<script>
+// Destaca no sumário a seção que está na tela
+(function () {
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.sumario a'));
+  var alvos = links.map(function (a) { return document.getElementById(a.getAttribute('href').slice(1)); });
+  if (!('IntersectionObserver' in window)) return;
+  var obs = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      links.forEach(function (a) { a.classList.toggle('ativo', a.getAttribute('href') === '#' + e.target.id); });
+    });
+  }, { rootMargin: '0px 0px -75% 0px' });
+  alvos.forEach(function (t) { if (t) obs.observe(t); });
+})();
+</script>
+</body>
+</html>
